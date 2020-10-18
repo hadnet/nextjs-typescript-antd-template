@@ -1,5 +1,5 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/hadnet/NextJs-TS-template)
-[![HitCount](http://hits.dwyl.io/hadnet/NextJsP1.svg)](http://hits.dwyl.io/hadnet/NextJs-TS-template)
+[![HitCount](http://hits.dwyl.io/hadnet/NextJs-TS-template.svg)](http://hits.dwyl.io/hadnet/NextJs-TS-template)
 ![GitHub issues](https://img.shields.io/github/issues/hadnet/NextJs-TS-template)
 ![David](https://img.shields.io/david/hadnet/NextJs-TS-template)
 ![David](https://img.shields.io/david/dev/hadnet/NextJs-TS-template)
