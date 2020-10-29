@@ -8,7 +8,7 @@ export function Footer({children}: {children?: React.ReactNode}) {
 const StyledFooter = styled.div`
   width: 100%;
   height: 100px;
-  border-top: 1px solid ${props => props.theme.colors.border};
+  border-top: 1px solid ${props => props.theme.dark.border};
   display: flex;
   justify-content: center;
   align-items: center;

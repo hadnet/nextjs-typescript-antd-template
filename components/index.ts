@@ -5,3 +5,7 @@ export {Main} from './Main';
 export {Title} from './Title';
 export {Card} from './Card';
 export {Logo} from './Logo';
+export {Button} from './Button';
+export {Header} from './Header';
+export {Menu} from './Menu';
+export {PageHeaderContainer} from './PageHeaderContainer';
