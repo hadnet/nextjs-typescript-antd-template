@@ -1,8 +1,8 @@
 import React from 'react';
 import {AppProps} from 'next/app';
-import {createGlobalStyle, ThemeProvider, DefaultTheme} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 import {ThemeSwitcherProvider} from 'react-css-theme-switcher';
-import secondaryColor from '@/styles/themeColors';
+import '@/public/default-theme.css';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,28 +16,13 @@ const themes = {
   light: `default-theme.css`,
 };
 
-const theme: DefaultTheme = {
-  dark: {
-    primary: secondaryColor,
-    border: '#eaeaea',
-    color: '#ffffff',
-  },
-  light: {
-    primary: secondaryColor,
-    border: '#eaeaea',
-    color: '#161616',
-  },
-};
-
 function MyApp({Component, pageProps}: AppProps) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <ThemeSwitcherProvider themeMap={themes} defaultTheme="light">
-          <Component {...pageProps} />
-        </ThemeSwitcherProvider>
-      </ThemeProvider>
+      <ThemeSwitcherProvider themeMap={themes} defaultTheme="light">
+        <Component {...pageProps} />
+      </ThemeSwitcherProvider>
     </>
   );
 }
