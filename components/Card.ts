@@ -5,17 +5,17 @@ export const Card = styled.a`
   flex-basis: 45%;
   padding: 1.5rem;
   text-align: left;
-  color: ${props => props.theme.dark.primary ?? 'inherit'};
+  color: ${props => props.theme.secondary ?? 'inherit'};
   text-decoration: none;
-  border: 1px solid ${props => props.theme.dark.border};
+  border: 1px solid ${props => props.theme.border};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
   &:hover,
   &:focus,
   &:active {
-    color: ${props => props.theme.dark.primary};
-    border-color: ${props => props.theme.dark.primary};
+    color: ${props => props.theme.secondary};
+    border-color: ${props => props.theme.secondary};
   }
 
   & h3 {

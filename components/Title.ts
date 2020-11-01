@@ -7,7 +7,7 @@ export const Title = styled.h1`
   font-size: 4rem;
 
   & a {
-    color: ${props => props.theme.dark.primary};
+    color: ${props => props.theme.secondary};
     text-decoration: none;
   }
 

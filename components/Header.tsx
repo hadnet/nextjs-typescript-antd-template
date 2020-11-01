@@ -11,6 +11,7 @@ import {
 } from '@ant-design/icons';
 import {MenuInfo} from 'rc-menu/es/interface';
 import {PageHeaderContainer, VercelLogo, Menu} from '@/components';
+import {white, black} from '@/styles/styledThemeColors';
 
 type P = {
   dark: boolean;
@@ -27,14 +28,17 @@ export class Header extends React.Component<P, S> {
     this.setState({current: e.key as string});
   };
   onChange = (checked: boolean) => {
-    this.props.setDark(checked);
+    // for a kind parallax effect
+    setTimeout(() => {
+      this.props.setDark(checked);
+    }, 500);
   };
   render() {
     const {current} = this.state;
     return (
       <PageHeaderContainer>
         <PageHeader
-          title={<VercelLogo fill={this.props.dark ? '#fff' : '#000'} width={`142`} height={`32`} />}
+          title={<VercelLogo fill={this.props.dark ? white : black} width={`142`} height={`32`} />}
           subTitle={`The React Framework for Production`}
           extra={[
             <Menu key={`menu`} onClick={this.handleTabs} mode={`horizontal`} selectedKeys={[current]}>
@@ -76,7 +80,6 @@ export class Header extends React.Component<P, S> {
                 <Switch
                   checkedChildren={<BulbFilled />}
                   unCheckedChildren={<BulbOutlined />}
-                  checked={this.props.dark}
                   onChange={this.onChange}
                 />
               </span>
