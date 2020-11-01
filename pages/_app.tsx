@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {AppProps} from 'next/app';
 import {createGlobalStyle, ThemeProvider, DefaultTheme} from 'styled-components';
+import changeTheme from 'next-dynamic-antd-theme';
+import {secondaryColor} from '@/styles/themeColors';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,18 +14,21 @@ const GlobalStyle = createGlobalStyle`
 
 const theme: DefaultTheme = {
   dark: {
-    primary: '#0070f3',
+    primary: secondaryColor,
     border: '#eaeaea',
     color: '#ffffff',
   },
   light: {
-    primary: '#3b94ff',
+    primary: secondaryColor,
     border: '#eaeaea',
     color: '#161616',
   },
 };
 
 function MyApp({Component, pageProps}: AppProps) {
+  useEffect(() => {
+    changeTheme('default');
+  });
   return (
     <>
       <GlobalStyle />

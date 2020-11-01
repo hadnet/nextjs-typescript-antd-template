@@ -13,7 +13,7 @@ const StyledFooter = styled.div`
   justify-content: center;
   align-items: center;
 
-  & img {
+  & svg {
     margin-left: 0.5rem;
   }
 

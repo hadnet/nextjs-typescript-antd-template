@@ -9,3 +9,4 @@ export {Button} from './Button';
 export {Header} from './Header';
 export {Menu} from './Menu';
 export {PageHeaderContainer} from './PageHeaderContainer';
+export {VercelLogo} from './VercelLogo';

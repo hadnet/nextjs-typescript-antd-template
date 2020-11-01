@@ -1,25 +1,47 @@
-import React from 'react';
-import Image from 'next/image';
-import {PageHeader, Dropdown, Button} from 'antd';
-import {CaretDownOutlined, HeartOutlined, DownOutlined, HomeOutlined, StarOutlined} from '@ant-design/icons';
+import React, {Dispatch, SetStateAction} from 'react';
+import {PageHeader, Dropdown, Button, Switch} from 'antd';
+import changeTheme from 'next-dynamic-antd-theme';
+import {
+  CaretDownOutlined,
+  HeartOutlined,
+  DownOutlined,
+  HomeOutlined,
+  StarOutlined,
+  BulbOutlined,
+  BulbFilled,
+} from '@ant-design/icons';
 import {MenuInfo} from 'rc-menu/es/interface';
-import {PageHeaderContainer, Menu} from '@/components';
+import {PageHeaderContainer, VercelLogo, Menu} from '@/components';
 
-type P = unknown;
-type S = {current: React.Key};
+type P = {
+  dark: boolean;
+  setDark: Dispatch<SetStateAction<boolean>>;
+};
+type S = {
+  current: string;
+};
 export class Header extends React.Component<P, S> {
-  state = {
+  state: S = {
     current: 'home',
   };
   handleTabs = (e: MenuInfo) => {
-    this.setState({current: e.key});
+    this.setState({current: e.key as string});
+  };
+  onChange = () => {
+    if (this.props.dark) {
+      this.props.setDark(false);
+      changeTheme('default');
+    } else {
+      this.props.setDark(true);
+      changeTheme('dark');
+    }
   };
   render() {
     const {current} = this.state;
     return (
       <PageHeaderContainer>
         <PageHeader
-          title={<Image src="/vercel.svg" width="142" height="32" />}
+          title={<VercelLogo fill={this.props.dark ? '#fff' : '#000'} width={`142`} height={`32`} />}
           subTitle={`The React Framework for Production`}
           extra={[
             <Menu key={`menu`} onClick={this.handleTabs} mode={`horizontal`} selectedKeys={[current]}>
@@ -57,6 +79,13 @@ export class Header extends React.Component<P, S> {
                   Dropdown <DownOutlined />
                 </Button>
               </Dropdown>
+              <span>
+                <Switch
+                  checkedChildren={<BulbFilled />}
+                  unCheckedChildren={<BulbOutlined />}
+                  onChange={this.onChange}
+                />
+              </span>
             </Menu>,
           ]}
         />

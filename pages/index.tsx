@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head';
-import {Container, Footer, Grid, Card, Main, Title, Logo, Button, Header} from '@/components';
+import {Container, Footer, Grid, Card, Main, Title, VercelLogo, Button, Header} from '@/components';
+import {Button as AntdButton, Row, Col} from 'antd';
 
 export default function Home() {
+  const [dark, setDark] = useState<boolean>(false);
   return (
     <Container>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header dark={dark} setDark={setDark} />
       <Main>
         <Title>
           Welcome to <a href="https://nextjs.org">Next.js with Styled Components!</a>
@@ -20,9 +22,14 @@ export default function Home() {
             <p>Find in-depth information about Next.js features and API.</p>
           </Card>
         </Grid>
-        <Button type={`primary`} shape={`round`}>
-          Primary Button
-        </Button>
+        <Row justify="space-between">
+          <Col xs={4} lg={8} offset={1} style={{display: 'flex', justifyContent: 'center'}}>
+            <Button type={`primary`}>Styled Button</Button>
+          </Col>
+          <Col xs={4} lg={8} style={{display: 'flex', justifyContent: 'center'}}>
+            <AntdButton type={`primary`}>Antd Button</AntdButton>
+          </Col>
+        </Row>
       </Main>
       <Footer>
         <a
@@ -30,7 +37,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by <Logo src="/vercel.svg" alt="Vercel Logo" />
+          Powered by <VercelLogo fill={dark ? '#fff' : '#000'} width={`70`} height={`16`} />
         </a>
       </Footer>
     </Container>
