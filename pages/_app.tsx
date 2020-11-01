@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {AppProps} from 'next/app';
 import {createGlobalStyle, ThemeProvider, DefaultTheme} from 'styled-components';
-import changeTheme from 'next-dynamic-antd-theme';
-import {secondaryColor} from '@/styles/themeColors';
+import {ThemeSwitcherProvider} from 'react-css-theme-switcher';
+import secondaryColor from '@/styles/themeColors';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
+const themes = {
+  dark: `dark-theme.css`,
+  light: `default-theme.css`,
+};
 
 const theme: DefaultTheme = {
   dark: {
@@ -26,14 +30,13 @@ const theme: DefaultTheme = {
 };
 
 function MyApp({Component, pageProps}: AppProps) {
-  useEffect(() => {
-    changeTheme('default');
-  });
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <ThemeSwitcherProvider themeMap={themes} defaultTheme="light">
+          <Component {...pageProps} />
+        </ThemeSwitcherProvider>
       </ThemeProvider>
     </>
   );

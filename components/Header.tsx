@@ -1,6 +1,5 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React from 'react';
 import {PageHeader, Dropdown, Button, Switch} from 'antd';
-import changeTheme from 'next-dynamic-antd-theme';
 import {
   CaretDownOutlined,
   HeartOutlined,
@@ -15,7 +14,7 @@ import {PageHeaderContainer, VercelLogo, Menu} from '@/components';
 
 type P = {
   dark: boolean;
-  setDark: Dispatch<SetStateAction<boolean>>;
+  setDark: (isChecked: boolean) => void;
 };
 type S = {
   current: string;
@@ -27,14 +26,8 @@ export class Header extends React.Component<P, S> {
   handleTabs = (e: MenuInfo) => {
     this.setState({current: e.key as string});
   };
-  onChange = () => {
-    if (this.props.dark) {
-      this.props.setDark(false);
-      changeTheme('default');
-    } else {
-      this.props.setDark(true);
-      changeTheme('dark');
-    }
+  onChange = (checked: boolean) => {
+    this.props.setDark(checked);
   };
   render() {
     const {current} = this.state;
@@ -83,6 +76,7 @@ export class Header extends React.Component<P, S> {
                 <Switch
                   checkedChildren={<BulbFilled />}
                   unCheckedChildren={<BulbOutlined />}
+                  checked={this.props.dark}
                   onChange={this.onChange}
                 />
               </span>
