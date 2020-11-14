@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Create Next App</title>
+        <title>Next.Js + SC</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
