@@ -18,7 +18,27 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Branches
+`master`
+
+`antd`
+
+`antd-dynamic-theme`
+
+`react-css-theme-switch`
+
+- master branch: Styled Components added.
+
+- antd branch: All above + antd library added.
+
+- Last two branches: All above + packages with different techniques (branch name) in order to get a dynamic theme (dark/light mode) with antd library.
+
+run:
+
+```bash
+git checkout <branch_name>
+yarn install
+```
 
 ## Learn More
 
