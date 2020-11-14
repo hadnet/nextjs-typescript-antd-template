@@ -1,9 +1,9 @@
-![GitHub package.json version](https://img.shields.io/github/package-json/v/hadnet/NextJs-TS-template)
-[![HitCount](http://hits.dwyl.io/hadnet/NextJs-TS-template.svg)](http://hits.dwyl.io/hadnet/NextJs-TS-template)
-![GitHub issues](https://img.shields.io/github/issues/hadnet/NextJs-TS-template)
-![David](https://img.shields.io/david/hadnet/NextJs-TS-template)
-![David](https://img.shields.io/david/dev/hadnet/NextJs-TS-template)
-![GitHub last commit](https://img.shields.io/github/last-commit/hadnet/NextJs-TS-template)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/hadnet/nextjs-typescript-antd-template)
+[![HitCount](http://hits.dwyl.io/hadnet/NextJs-TS-template.svg)](http://hits.dwyl.io/hadnet/nextjs-typescript-antd-template)
+![GitHub issues](https://img.shields.io/github/issues/hadnet/nextjs-typescript-antd-template)
+![David](https://img.shields.io/david/hadnet/nextjs-typescript-antd-template)
+![David](https://img.shields.io/david/dev/hadnet/nextjs-typescript-antd-template)
+![GitHub last commit](https://img.shields.io/github/last-commit/hadnet/nextjs-typescript-antd-template)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
